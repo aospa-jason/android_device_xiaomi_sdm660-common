@@ -160,10 +160,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     vendor.display.config@1.1
 
-# Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
-
 # DPM
 PRODUCT_PACKAGES += \
     libcutils_shim
@@ -340,6 +336,14 @@ PRODUCT_PACKAGES += \
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
+# ParanoidDoze
+PRODUCT_PACKAGES += \
+    ParanoidDoze
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.sensor.proximity=true \
+    ro.sensor.pickup=android.sensor.tilt_detector
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
